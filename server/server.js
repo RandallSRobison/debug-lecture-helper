@@ -3,8 +3,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const messagesCtrl = require('./messagesCtrl');
 const session = require('express-session');
+const {SESSION_SECRET, SERVER_PORT} = process.env
 
 const app = express();
+app.use(bodyParser.json());
 
 app.use(
   session({
